@@ -1,0 +1,348 @@
+.opini{ 
+    display: flex;/*Elemen di dalamnya ditata memanjang ke samping*/
+    flex-wrap: wrap;/*Kalau sudah penuh, item berikutnya turun ke bawah*/
+    gap: 20px;/*Jarak antar item 20px*/
+    justify-content: center;/*Semua item dipusatkan secara horizontal*/
+    padding: 20px;/*Ruang kosong di dalam elemen sebesar 20px*/
+}
+.opini::-webkit-scrollbar{
+    height: 8px;/*Tinggi scrollbarnya*/
+}
+.opini::-webkit-scrollbar-thumb{
+    background-color: #aaa;/*Warna bagian scroll yang bisa digeser*/
+    border-radius: 10px;/*Sudutnya dibulatkan biar halus*/
+}
+.opini::-webkit-scrollbar-track{
+    background-color: #eee;/* Warna latar belakang scrollbarnya*/
+}
+.opini-sebagian{
+    width: 280px; /* Lebarnya 280px */
+    background-color: white; /* Latar belakang putih */
+    border-radius: 12px; /* Sudutnya dibulatkan modern */
+    overflow: hidden; /* Isi yang keluar dari kotak dipotong */
+    border: 1px solid #d8dce2; /* Garis batas halus */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04); /* Bayangan lembut */
+    transition: transform 0.25s ease, box-shadow 0.25s ease; /* Perpindahan efek halus saat hover */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Vertikal */
+    justify-content: space-between; /* Bagian atas-bawah seimbang */
+}
+.opini-sebagian:hover{
+    transform: translateY(-4px); /* Kartu naik saat dihover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Bayangannya makin lembut */
+}
+.opini-sebagian a{
+    display: inline-block; /* Tautan */
+    padding: 6px 12px 14px 12px; /* Ruang di dalam */
+    color: #a91e2c; /* Warna merah soft Faktanesia */
+    text-decoration: none; /* Tanpa garis bawah */
+    font-weight: 600; /* Agak tebal */
+    font-family: "Open Sans", sans-serif; /* Jenis font */
+    font-size: 13px; /* Ukuran font */
+    transition: color 0.2s ease; /* Warna berubah perlahan */
+}
+.opini-sebagian a:hover{
+    color: #8e1824; /* Merah soft lebih gelap saat hover */
+    text-decoration: underline; /* Muncul garis bawah */
+}
+.opini-sebagian img {
+    width: 100%; /* Gambar selebar kotak */
+    height: 160px; /* Tinggi tetap 160px */
+    aspect-ratio: 16/9; /* Rasio standar */
+    object-fit: cover; /* Gambar dipotong rapi, nggak gepeng */
+    border-radius: 0; /* Sudut mengikuti card */
+    transition: transform 0.3s ease; /* Efek zoom */
+}
+.opini-sebagian:hover img{
+    transform: scale(1.05); /* Perbesar halus saat dihover */
+}
+.opini-sebagian h3{
+    font-size: 1rem; /* Ukuran font sedang */
+    line-height: 1.4; /* Spasi baris */
+    padding: 0 12px 10px 12px; /* Jarak dalam */
+    color: #272a30; /* Teks charcoal lembut */
+    font-family: "Roboto Condensed", sans-serif; /* Font tegas */
+    display: -webkit-box; /* Line-clamp multi line */
+    -webkit-line-clamp: 2; /* Maksimal 2 baris */
+    line-clamp: 2; /* Standar properti CSS W3C */
+    -webkit-box-orient: vertical; /* Arah vertikal */
+    overflow: hidden; /* Sembunyikan jika lebih */
+    flex: 1; /* Isi ruang */
+}
+.opini-sebagian small{
+    padding: 10px 12px 6px 12px; /* Memberikan padding */
+    color: #767d86; /* Warna abu-abu lembut */
+    font-size: 11px; /* Ukuran kecil */
+    font-weight: 400; /* Font normal */
+}
+
+
+/* Seperti Artikel */
+.batas-art{
+    background-color: #ffffff; /* Latar belakang putih bersih */
+    border: 1px solid #d8dce2; /* Garis batas halus modern */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04); /* Bayangan lembut elegan */
+    padding: 24px; /* Jarak dalam kotak 24px */
+    border-radius: 16px; /* Sudut melengkung modern */
+    position: relative; /* Posisi relatif */
+    flex: 1; /* Fleksibel */
+}
+
+.batas-art h2{
+    color: #a91e2c; /* Warna judul merah soft */
+    margin-bottom: 20px; /* Jarak bawah */
+    margin-left: 0; /* Rata kiri */
+    font-size: 1.4rem; /* Ukuran font */
+    font-family: "Roboto Condensed", sans-serif; /* Font tegas */
+    border-bottom: 2px solid #a91e2c; /* Garis bawah judul */
+    padding-bottom: 8px; /* Padding bawah */
+    display: inline-block; /* Pas dengan teks */
+}
+
+.kaya-artikel{
+    display: flex;/*sejajar ke samping (horizontal) secara default.*/
+    gap: 16px;/* Jarak antar elemen di dalamnya */
+    margin-bottom: 18px;/* Dikasih jarak bawah 18px */
+    background-color: #f7f9fa; /* Latar abu-abu terang lembut */
+    border: 1px solid #e0e4ea; /* Garis tepi halus */
+    padding: 16px;/* Ada jarak ke dalam sebesar 16px */
+    border-radius: 12px;/* Sudut kotak dibulatkan 12px */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);/* Bayangan lembut */
+    align-items: center;/* Vertikal rata tengah */
+    max-width: 100%;/* Lebar fleksibel */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi hover */
+}
+.kaya-artikel:hover{
+    transform: translateY(-2px); /* Naik halus saat hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06); /* Bayangan lebih jelas */
+}
+.kaya-artikel a{
+    color: white; /* Warna teks link-nya putih */
+    text-decoration: none; /* Garis bawah pada link dihilangkan */
+    background-color: #a91e2c; /* Warna latar belakang link merah soft Faktanesia */
+    padding: 6px 14px; /* Ruang di dalam link */
+    border-radius: 6px; /* Sudut link dibulatkan */
+    font-size: 12px; /* Ukuran huruf */
+    font-weight: 600; /* Font semi tebal */
+    width: fit-content; /* Lebarnya otomatis */
+    transition: background-color 0.25s ease; /* Transisi halus */
+    font-family: "Open Sans", sans-serif; /* Font Open Sans */
+}
+.kaya-artikel a:hover {
+    background-color: #8e1824; /* Saat di-hover, warna merah lebih gelap */
+}
+.kaya-artikel img{
+    width: 150px;            /* Gambar lebarnya 150px */
+    height: 90px;            /* Tingginya 90px */
+    aspect-ratio: 16/9;      /* Rasio 16:9 */
+    object-fit: cover;       /* Gambar di-crop agar pas tanpa distorsi */
+    border-radius: 8px;      /* Sudut gambar dibulatkan */
+    flex-shrink: 0;          /* Supaya gambar gak mengecil saat ruangnya sempit */
+    transition: transform 0.25s ease; /* Transisi zoom */
+}
+.kaya-artikel:hover img{
+    transform: scale(1.05);  /* Sedikit zoom saat hover */
+}
+.konten-artikel{
+    display: flex;             /* Biar isinya bisa ditata fleksibel */
+    flex-direction: column;   /* Isi ditata dari atas ke bawah */
+    justify-content: space-between; /* Biar bagian atas dan bawah punya jarak */
+    flex: 1;                  /* Isi konten mengisi ruang yang tersedia */
+}
+.kaya-artikel p{
+    margin: 0 0 10px;        /* Jarak bawah 10px */
+    font-size: 14px;         /* Ukuran teks nyaman */
+    color: #2e3238;          /* Warna charcoal lembut jelas terbaca */
+    line-height: 1.5;        /* Spasi antar baris nyaman */
+    font-family: "Open Sans", sans-serif; /* Font Open Sans */
+}
+
+/* opini-sisa */
+.opini-sisa{
+    width: 280px;                   /* Lebarnya 280px */
+    background-color: white;       /* Latar putih */
+    border-radius: 12px;           /* Sudut dibulatkan */
+    overflow: hidden;              /* Bagian yang keluar akan dipotong */
+    border: 1px solid #d8dce2;     /* Garis tepi halus */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04); /* Bayangan halus */
+    transition: transform 0.25s ease, box-shadow 0.25s ease; /* Transisi gerakan halus */
+    display: flex;                 /* Flexbox */
+    flex-direction: column;        /* Vertikal */
+    justify-content: space-between;/* Seimbang */
+}
+.opini-sisa:hover{
+    transform: translateY(-4px); /* Saat mouse diarahkan, kartu naik sedikit */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Bayangan lembut */
+}
+.opini-sisa a{
+    display: inline-block;       /* Tautan blok inline */
+    padding: 6px 12px 14px 12px; /* Jarak dalam */
+    color: #a91e2c;              /* Warna merah soft Faktanesia */
+    text-decoration: none;       /* Hilangkan garis bawah */
+    font-weight: 600;            /* Huruf agak tebal */
+    font-size: 13px;             /* Ukuran font */
+    font-family: "Open Sans", sans-serif; /* Font Open Sans */
+    transition: color 0.2s ease; /* Saat hover, perubahan warna halus */
+}
+.opini-sisa a:hover{
+    color: #8e1824;              /* Saat di-hover, jadi merah lebih gelap */
+    text-decoration: underline; /* Garis bawah muncul lagi */
+}
+.opini-sisa img {
+    width: 100%;                /* Mengisi lebar penuh kontainer */
+    height: 160px;              /* Tinggi tetap */
+    aspect-ratio: 16/9;         /* Rasio 16:9 */
+    object-fit: cover;          /* Gambar dicrop agar tetap proporsional */
+    border-radius: 0;           /* Sudut rata */
+    transition: transform 0.3s ease; /* Transisi */
+}
+.opini-sisa:hover img{
+    transform: scale(1.05);      /* Zoom halus */
+}
+.opini-sisa h3{
+    font-size: 1rem;                     /* Ukuran huruf sedang */
+    line-height: 1.4;                    /* Jarak baris */
+    padding: 0 12px 10px 12px;           /* Ruang dalam */
+    color: #272a30;                      /* Warna teks charcoal lembut */
+    font-family: "Roboto Condensed", sans-serif; /* Font Roboto Condensed */
+    display: -webkit-box;                /* Multi-line clamp */
+    -webkit-line-clamp: 2;               /* Maksimal 2 baris */
+    line-clamp: 2;                       /* Standar properti CSS W3C */
+    -webkit-box-orient: vertical;        /* Vertikal */
+    overflow: hidden;                    /* Sembunyikan overflow */
+    flex: 1;                             /* Isi ruang */
+}
+.opini-sisa small{
+    padding: 10px 12px 6px 12px;         /* Jarak dalam */
+    color: #767d86;                      /* Warna abu-abu lembut */
+    font-size: 11px;                     /* Ukuran kecil */
+    font-weight: 400;                    /* Berat font normal */
+}
+
+.kontainer-opini{
+    display: flex;                      /* Menjadikan elemen ini sebagai flex container */
+    justify-content: space-between;    /* Memberi jarak rata antara isi di dalamnya */
+    align-items: flex-start;           /* Semua elemen anak disejajarkan ke atas (bagian atas kotak) */
+    padding: 20px 6%;                  /* Jarak dalam 20px atas-bawah dan 6% kiri-kanan */
+    gap: 30px;                         /* Jarak antar elemen anak di dalam kontainer */
+}
+.opini-info{
+    display: flex;                     /* Jadikan elemen ini fleksibel */
+    flex-direction: column;           /* Susunan elemen di dalamnya vertikal (atas ke bawah) */
+    gap: 20px;                         /* Jarak antar elemen anak di dalam kolom */
+    width: 300px;                      /* Lebarnya dibatasi 300px */
+}
+
+/* ==================== Responsive ==================*/
+ @media (max-width: 600px){/*dilayar kecil (Hp)*/
+  .opini {
+    flex-direction: column;           /* Tumpuk konten opini secara vertikal */
+    gap: 20px;                        /* Beri jarak antar elemen dalam stack */
+    align-items: center;             /* Pusatkan semua isi ke tengah */
+  }
+
+  .opini-sebagian,
+  .opini-sisa {
+    max-width: 90%;                  /* Maksimal lebarnya hanya 90% dari layar, agar tidak mepet pinggir */
+  }
+ }
+
+@media (max-width: 480px){/*ampilan sangat mobile-friendly, semuanya tampil vertikal & pas dengan layar HP kecil.*/
+  .kontainer-opini{
+    flex-direction: column;          /* Susunan jadi ke bawah (bukan kiri-kanan) */
+    padding: 10px;                   /* Padding lebih kecil agar muat di layar kecil */
+  }
+
+  .batas-art,
+  .opini-sebagian,
+  .opini-sisa {
+    width: 100%;                     /* Ambil penuh lebar layar */
+    padding: 10px;                   /* Isi dalam tidak mepet */
+    margin: 0 auto 15px;             /* Tengah dan beri jarak bawah */
+  }
+
+  .kaya-artikel {
+    flex-direction: column;         /* Artikel di dalam ditumpuk ke bawah */
+    text-align: center;             /* Teks ditengahkan */
+  }
+
+  .kaya-artikel img {
+    width: 100%;                    /* Gambar ambil lebar penuh */
+    height: auto;                   /* Tingginya mengikuti proporsi gambar */
+  }
+
+  .konten-artikel {
+    width: 100%;                    /* Gambar ambil lebar penuh */
+    padding: 0;                     /* Tidak ada padding tambahan */
+  }
+
+  .opini-info {
+    flex-direction: column;          /* Susunan jadi ke bawah (bukan kiri-kanan) */
+    align-items: center;            /* Elemen di dalamnya disejajarkan ke tengah */
+  }
+}
+@media (max-width: 768px){/*Di tablet atau layar menengah, elemen masih bersebelahan tapi mulai menyesuaikan diri agar tidak terlalu padat.*/
+  .kontainer-opini{
+    flex-direction: column;    /* Susunan elemen dalam flex jadi vertikal (atas ke bawah) */
+    align-items: center;       /* Semua elemen dalam kontainer dipusatkan ke tengah */
+    padding: 20px;             /* Tambahkan ruang dalam 20px dari semua sisi */
+  }
+  .batas-art{
+    width: 100%;              /* Lebarnya diubah jadi penuh, agar cocok di layar kecil */
+    margin-left: 0;           /* Menghilangkan margin kiri agar tidak terdorong ke kanan */
+  }
+  .opini-info{
+    flex-wrap: wrap;          /* Jika banyak konten dalam baris, izinkan pindah ke baris bawah */
+    justify-content: center;  /* Semua isi dipusatkan */
+  }
+  .opini-sisa{
+    width: 45%;               /* Setiap kotak hanya ambil 45% dari lebar layar */
+    margin: 10px;             /* Beri jarak di sekitar elemen */
+  }
+  .opini-sebagian{
+    width: 90%;               /* Kotak utama artikel ambil 90% dari layar (tidak penuh biar rapi) */
+    margin-bottom: 20px;      /* Jarak ke bawah agar tidak dempet dengan konten berikutnya */
+  }
+}
+
+@media (max-width: 1024px){ /* Jika lebar layar maksimal 1024px, misalnya tablet seperti iPad */
+
+  .kontainer-opini {
+    flex-direction: column;      /* Susunan kontennya diubah jadi vertikal (dari atas ke bawah) */
+    align-items: center;         /* Semua isi kontainer dipusatkan */
+    padding: 20px;               /* Dikasih ruang dalam biar kontennya gak dempet */
+  }
+
+  .batas-art {
+    width: 100%;                 /* Kotaknya dibuat selebar layar */
+    margin-left: 0;              /* Hilangkan jarak dari kiri (biar nggak terdorong ke kanan) */
+  }
+
+  .opini-info {
+    flex-direction: row;         /* Susun elemen di dalamnya jadi sejajar ke samping */
+    flex-wrap: wrap;             /* Kalau gak muat, pindah ke baris baru */
+    justify-content: center;     /* Semua elemen dipusatkan */
+    gap: 20px;                   /* Jarak antar elemen */
+  }
+
+  .opini-sisa {
+    width: 45%;                  /* Lebar tiap kartu di samping dibuat 45% agar muat 2 kartu dalam 1 baris */
+    margin: 10px 0;              /* Kasih jarak atas-bawah 10px */
+  }
+
+  .opini-sebagian {
+    width: 90%;                  /* Konten utama ambil 90% layar agar tampil elegan di tengah */
+    margin-bottom: 20px;         /* Kasih jarak bawah supaya tidak nempel dengan bagian bawah */
+  }
+}
+
+@media (max-width: 992px){/*Semua aturan di bawah ini akan berlaku hanya ketika lebar layar kurang dari atau sama dengan 992px (biasanya laptop kecil atau tablet dalam posisi landscape).*/
+  .opini-info{
+    justify-content: space-around;  /* Elemen disebar rata dengan ruang di sekitarnya */  }
+  .opini-sisa{
+    width: 48%;/*Setiap item ambil hampir setengah dari lebar layar*/
+  }
+  .opini-sebagian{
+    width: 90%;/*Bagian utama artikel dibuat agak menyempit (tidak 100%)*/
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title> <!--Judul halaman yang tampil di tab browser-->
+    <link rel="stylesheet" href="css/style.css"> <!--Memuat file style.css yang mengatur style dasar halaman-->
+    <link rel="stylesheet" href="css/navigation.css"> <!--Memuat file navigation.css yang mengatur style navigasi-->
+    <link rel="stylesheet" href="css/footer.css"> <!--Memuat file footer.css yang mengatur style footer-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" /> <!--Memuat icon google-->
+</head>
+<body>
+    <header id="top"> <!--Bagian header dengan id top untuk anchor kembali ke atas-->
+        <nav> <!--Bagian navigasi utama didalam elemen header-->
+                <div class="logo"> <!--kontainer logo situs-->
+                <a href="#contact-us" title="menuju about us"> <!--Tautan menuju bagian bawah halaman (footer) dengan id="contact-us"-->
+                    <img src="asset/Logo-Faktanesia.png" alt="Logo-Faktanesia"> <!--Gambar logo Faktanesia-->
+                </a>
+            </div>
+            <div class="menu-icon" id="menu-icon"> <!--kontainer menu icon-->
+                <span class="material-symbols-outlined">menu</span> <!--Menampilkan icon google menu dihalaman navbar-->
+            </div>
+            <ul id="nav-list"> <!-- Awal list navigasi (menu)-->
+                <li><a href="index.html" class="active-nav">BERANDA</a></li> <!--Tautan ke halaman utama (beranda - aktif)-->
+                <li><a href="opini.html">OPINI</a></li> <!--Tautan ke halaman opini-->
+                <li><a href="market.html">MARKET</a></li> <!--Tautan ke halaman market-->
+                <li><a href="syariah.html">SYARIAH</a></li> <!--Tautan ke halaman syariah-->
+                <li><a href="lifestyle.html">LIFESTYLE</a></li> <!--Tautan ke halaman lifestyle-->
+            </ul>
+            <div class="search-container"> <!-- Area untuk form pencarian -->
+                <input type="text" id="search-input" placeholder="Cari berita..."> <!-- Kolom input teks untuk pencarian -->
+                <button type="submit" id="search-btn">Cari</button> <!-- Tombol pencarian -->
+            </div>
+        </nav>
+    </header>
+
+    <section class="image-slider" id="image-slider"> <!--Bagian untuk slider gambar utama-->
+        <div class="slider-text"> <!--Judul dengan efek visual dihubungkan ke script.js-->
+            <h1>FAKTA<span>NESIA</span></h1> <!--Judul heading 1 di image show-->
+            <p>Fakta Hari Ini, Wawasan Masa Depan.</p> <!--Paragraf untuk di image show-->
+        </div>
+        <div class="image-show"> <!--Tempat menampilkan gambar-gambar slider-->
+            <img src="asset/Page1-Homepage-Artguru.png" alt="berita1" class="active"> <!--gambar pertama (aktif)-->
+            <img src="asset/Page2-Homepage-Artguru.png" alt="berita2"> <!--gambar kedua -->
+            <img src="asset/page3-Homepage-Artguru.png" alt="berita3"> <!--gambar ketiga-->
+        </div>
+        <!-- Tombol kontrol slider panah kiri dan kanan -->
+        <button class="slider-btn prev-btn" id="prev-slide" aria-label="Slide sebelumnya">&#10094;</button> <!--Tombol panah slide kiri-->
+        <button class="slider-btn next-btn" id="next-slide" aria-label="Slide berikutnya">&#10095;</button> <!--Tombol panah slide kanan-->
+        <!-- Kontainer titik indikator slider dibuat dinamis lewat JavaScript -->
+        <div class="slider-dots" id="slider-dots"></div> <!--Kontainer indikator dots-->
+    </section>
+
+    <main>
+        <section class="terbaru-all"> <!--Bagian untuk berita terbaru dengan diisi oleh javaScript-->
+            <h2>Terbaru</h2> <!--Heading 2 untuk memberikan keterangan terbaru-->
+        <div class="berita-new-wrapper"><p class="loading-state">Memuat berita terbaru...</p></div> <!--kontainer pembungkus element yang terhubug dengan javascript-->
+            <!--isi berita terbaru-->
+        </section>
+
+        <section class="all-berita"> <!--Bagian menampilkan semua berita diisi dengan JavaScript-->
+            <h2>Semua Berita</h2> <!--Heading 2 untuk memberikan keterangan semua berita-->
+            <div class="semua-berita"><p class="loading-state">Memuat semua berita...</p></div> <!--Kontainer pembungkus elemen yang terhubung dengan javascript-->
+            <!-- isi semua berita-->
+        </section>
+
+        <!--========== MODAL HASIL PENCARIAN ============-->
+        <div id="search-modal" class="modal"> <!--pembungkus semua kontainer lainnya-->
+            <div class="modal-content"> <!--kontainer pembungkus bagian dalam-->
+                <span class="close-button" id="close-modal">&times</span> <!--Tombol tutup(x) untuk modal pencarian-->
+                <h3 id="result-count"></h3> <!--Tempat tampilnya jumlah hasil pencarian-->
+                <div id="search-results"></div> <!--Tempat hasil pencarian akan ditampilkan-->
+            </div>
+        </div>
+        <br><br> <!--spasi kosong bawah halaman-->
+    </main>
+
+    <footer class="footer"> <!--Kontainer class yang didalam footer-->
+        <div class="footer-content"> <!--kontainer footer-content yang membungkus class="saran" dan class="about"-->
+            <div class="saran" id="saran-kritik"> <!--Kontainer class saran dan id saran-kritik-->
+                <h3>SARAN & KRITIK</h3> <!--Heading 3 untuk judul saran & kritik-->
+                <a href="saran-kritik.html"> <!--Bagian link ke halaman kritik dan saran-->
+                    <p>Silahkan klik disini untuk memberikan saran atau kritik !!</p> <!--pargraf isi dari isi saran-kritik, memudahkan pengguna untuk memberikan saran-kritiknya-->
+                </a>    
+            </div>
+            <div class="about"> <!--Penjelasan singkat tentang Faktanesia-->
+                <h3>TENTANG</h3> <!--Heading h3 untuk judul-->
+                <p>Faktanesia menyajikan berita yang informatif tentang peristiwa <!--Isi singkat about faktanesia-->
+                    opini, lifestyle, market, hingga syariah. Dikemas dengan bahasa ringan,
+                    lugas dan tanpa prasangka, informasi tersaji dalam 24 jam.
+                </p>
+            </div>
+            <div class="contact-us" id="contact-us"> <!--Informasi kontak dan ikon sosial media-->
+                <h3>HUBUNGI KAMI</h3> <!--Heading 3 untuk judul-->
+                <div class="contact-icon"> <!--kontainer yang membungkus link eksternal-->
+                    <a href="https://www.instagram.com/in.ez___" target="_blank"><img src="asset/logoIconFooter/social.png" alt="instagram"></a> <!--Menghubungkan ke instagram-->
+                    <a href="mailto:ineskarlina55@gmail.com" target="_blank"><img src="asset/logoIconFooter/gmail.png" alt="gmail"></a><!--Menghubungkan ke gmail-->
+                    <a href="https://www.linkedin.com/in/ines-karlina" target="_blank"><img src="asset/logoIconFooter/linkedin.png" alt="linkedin"></a> <!--Menghubungkan ke LinkedIn-->
+                </div>
+                <p>Jln. Dakota No.8A, Sukaraja, Kec.Cicendo, Kota Bandung, Jawa Barat 40175</p><!--Membuat paragraf untuk info alamat-->
+            </div>
+        </div>
+        <div class="copy-right"> <!--Informasi hak cipta dan link untuk kembali ke atas halaman-->
+            <a href="#top" title="kembali ke atas"> <!--link untuk memudahkan pengguna kembali keatas-->
+                <p>&copy; 2025 Faktanesia. by Ines Karlina - Hak cipta dilindungi undang-undang.</p> <!--Informasi kepemilikan website-->
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/script.js" defer></script> <!--Menghubungkan ke file utama javaScript-->
+</body>
+</html>

@@ -1,0 +1,99 @@
+.footer{ /*Bagian footer (bagian paling bawah website) */
+    background-color: #1a1c20; /*latar belakang warna graphite gelap soft*/
+}
+
+.footer-content{ /*wadah isi dari footer.*/
+    display: flex; /*Biar isinya bisa diatur berjajar secara fleksibel.*/
+    justify-content: space-between; /*Biar antar isi ada jarak merata, satu kiri, satu kanan.*/
+    flex-wrap: wrap; /*Kalau layar sempit, isiannya bakal turun ke baris bawah.*/
+    padding: 40px 20px; /*Kasih ruang dalam 40px atas-bawah dan 20px kanan-kiri*/
+    gap: 30px; /*Jarak antar elemen 30px.*/
+    font-family: "Open Sans", sans-serif; /*Pakai jenis huruf Open Sans dari google font.*/
+}
+
+.about{ /*bagian buat deskripsi singkat tentang web*/
+    padding: 10px;/*Kasih ruang dalam 10px ke semua sisi.*/
+    width: 35%; /*Lebarnya 35% dari footer.*/
+    text-align: center; /*Teksnya dirata tengah*/
+    color: white; /*warnanya putih.*/
+}
+
+.contact-us{ /*Untuk informasi kontak.*/
+    padding: 10px; /*Kasih ruang dalam 10px ke semua sisi.*/
+    width: 35%; /*Lebarnya 35% dari footer.*/
+    text-align: center; /*Teksnya dirata tengah*/
+    color: white; /*warnanya putih.*/
+}
+
+.contact-us img{ /*Gambar (ikon sosmed dll) di bagian kontak*/
+    width: 30px; /*Lebarnya 30px.*/
+}
+
+.contact-us img:hover{ /*Kalau kursor diarahkan ke gambar*/
+    transform: scale(0.8); /*gambarnya mengecil sedikit (jadi 80% ukurannya)*/
+}
+
+.saran{ /*buat tempat saran dan kritik*/
+    padding: 5px; /*Kasih ruang dalam 5px ke semua sisi*/
+    width: 30%; /*Lebarnya 30% dari footer*/
+    text-align: center;/*Teksnya dirata tengah*/
+    color: white;/*Warnanya putih*/
+}
+
+.saran a{/* Tautan di dalam .saran*/
+    text-decoration: none;/*Garis bawah bawaan link dihilangin.*/
+    color: white;/*Teksnya putih*/
+}
+
+.saran a:hover{/*Jika kursor diarahkan*/
+    text-decoration: underline;/*link-nya muncul garis bawah lagi*/
+    color: #e56868;/*warnanya jadi merah soft.*/
+}
+
+.about, .contact-us, .saran{ /*Ketiga bagian ini diberi pengaturan fleksibel*/
+    flex: 1; /*Biar ukurannya fleksibel dan seimbang*/
+    min-width: 250px; /* Tapi ukurannya minimal tetap 250px biar gak kekecilan pas di layar sempit.*/
+}
+
+.about h3, .contact-us h3, .saran h3{ /*Judul h3 di dalam ketiga kolom footer*/
+    padding: 5px 0 10px 0;/*Kasih ruang bawah untuk judul*/
+    color: #e56868;/*Warna merah soft khas Faktanesia*/
+    font-family: "Roboto Condensed", sans-serif;/*Font tegas untuk judul*/
+    letter-spacing: 0.5px;/*Jarak huruf halus*/
+}
+
+.copy-right{/* Bagian paling bawah, biasanya tulisan hak cipta*/
+    background-color: #121417;/*Warna latar abu gelap halus.*/
+    text-align: center; /*Teks ditengah.*/
+    font-family: "Open Sans", sans-serif; /*Font-nya juga pakai Open Sans.*/
+    padding: 14px 10px; /*Padding vertikal nyaman*/
+}
+
+.copy-right a{ /*Link di dalam .copy-right*/
+    color: #fff; /*Warnanya putih.*/
+    text-decoration: none; /*Tidak ada garis bawah.*/
+}
+
+.copy-right a:hover{ /*Kalau kursor diarahkan ke link-nya*/
+    text-decoration: underline; /*Muncul garis bawah.*/
+    color: #e56868; /*Warnanya jadi merah soft.*/
+}
+
+/* =================== Responsive ====================*/
+@media (max-width: 768px) { /*Mulai aturan khusus untuk layar kecil (tablet atau HP).*/
+  .footer-content { /*Kalau layar kecil:*/
+    flex-direction: column;/*Susunan flex-nya jadi vertikal (atas ke bawah)*/
+    align-items: center;/*Disejajarkan di tengah*/
+    text-align: center;/*Disejajarkan di tengah*/
+    padding: 20px 10px; /*Padding-nya dikurangi jadi kiri-kanan 10px, atas bawah 20px.*/
+  }
+
+  .saran, .about, .contact-us {/* Bagian saran, about, contact*/
+    width: 100%;/*Lebar penuh (100%)*/
+    max-width: 500px;/*maksimal 500px biar gak terlalu lebar*/
+  }
+
+  .contact-us img {/*Bagian images*/
+    margin: 0 10px;/*Kasih jarak kanan-kiri sebesar 10px dan atas-bawah nya 0 ke gambar-gambar di bagian kontak*/
+  }
+}

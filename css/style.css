@@ -1,0 +1,1050 @@
+/* Dipakai untuk berbagai elemen teks agar tampilan terlihat profesional dan modern.*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Reset default style dan box-sizing*/
+*,
+html {
+    padding: 0;
+    /* Hilangkan padding default pada semua elemen */
+    margin: 0;
+    /* Hilangkan margin default pada semua elemen */
+    box-sizing: border-box;
+    /* Hitung lebar/tinggi elemen termasuk padding dan border */
+}
+
+body {
+    background-color: #eaedf1;
+    /* Warna latar belakang soft abu-slate yang tenang dan teduh di mata */
+    color: #2e3238;
+    /* Teks warna charcoal lembut, nyaman untuk membaca jangka panjang */
+    font-family: "Open Sans", sans-serif;
+    /* Font utama teks */
+    margin-top: 60px;
+    /* Jarak atas agar tidak tertutup nav yang fixed */
+}
+
+/*================= SLIDER BERANDA ==================*/
+.image-slider {
+    position: relative;
+    /* Agar elemen anak bisa diposisikan absolut */
+    width: 100%;
+    /* Lebar penuh mengikuti parent */
+    height: 500px;
+    /* Tinggi tetap untuk slider */
+    overflow: hidden;
+    /* Gambar di luar area ini disembunyikan */
+    margin-top: 60px;
+    /* Jarak atas dari elemen sebelumnya */
+}
+
+.image-show {
+    position: relative;
+    /* Untuk menampung gambar dengan posisi absolut */
+    height: 100%;
+    /* Ikuti tinggi dari .image-slider */
+}
+
+.image-show img {
+    position: absolute;
+    /* Semua gambar ditumpuk satu sama lain */
+    width: 100%;
+    /* Lebar penuh agar memenuhi slider */
+    height: 100%;
+    /* Tinggi penuh agar tidak ada ruang kosong */
+    object-fit: cover;
+    /* Gambar tetap proporsional dan memenuhi ruang */
+    opacity: 0;
+    /* Gambar disembunyikan dulu */
+    transition: opacity 1s ease-in-out;
+    /* Efek transisi saat gambar muncul */
+}
+
+.image-show img.active {
+    opacity: 1;
+    /* Gambar aktif akan terlihat */
+    z-index: 1;
+    /* Pastikan di depan gambar lain */
+}
+
+.slider-text {
+    position: absolute;
+    /* Ditempatkan bebas di dalam slider */
+    top: 50%;
+    /* Letakkan di tengah vertikal */
+    left: 50%;
+    /* Letakkan di tengah horizontal */
+    transform: translate(-50%, -50%);
+    /* Koreksi agar titik tengah tepat */
+    color: white;
+    /* Warna teks putih */
+    text-align: center;
+    /* Teks rata tengah */
+    z-index: 2;
+    /* Pastikan teks muncul di atas gambar */
+    font-family: "Roboto Condensed", sans-serif;
+    /* Jenis huruf dari Google Fonts */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    /* Bayangan hitam agar teks terbaca */
+    backdrop-filter: blur(8px);
+    /* Efek blur latar belakang teks */
+    background: rgba(0, 0, 0, 0.45);
+    /* Latar belakang transparan gelap */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Garis batas halus modern */
+    padding: 24px 36px;
+    /* Ruang dalam elemen teks yang lega */
+    border-radius: 16px;
+    /* Sudut membulat modern */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    /* Bayangan lembut */
+}
+
+.slider-text h1 {
+    font-size: 52px;
+    /* Ukuran besar untuk judul utama */
+    letter-spacing: 1px;
+    /* Sedikit spasi antar huruf */
+    margin-bottom: 8px;
+    /* Jarak bawah dari teks berikutnya */
+}
+
+.slider-text span {
+    color: #e56868;
+    /* Warna merah soft untuk penekanan kata */
+}
+
+.slider-text p {
+    font-size: 20px;
+    /* Ukuran teks paragraf penjelas */
+    color: #f0f0f0;
+    /* Teks putih gading */
+}
+
+/* Tombol Panah Slider Manual */
+.slider-btn {
+    position: absolute;
+    /* Posisi absolut di atas gambar */
+    top: 50%;
+    /* Tepat di tengah vertikal */
+    transform: translateY(-50%);
+    /* Koreksi posisi vertikal */
+    z-index: 10;
+    /* Di atas slide gambar */
+    background-color: rgba(0, 0, 0, 0.45);
+    /* Latar belakang semi transparan */
+    color: white;
+    /* Warna panah putih */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Border halus */
+    width: 44px;
+    /* Lebar tombol */
+    height: 44px;
+    /* Tinggi tombol */
+    border-radius: 50%;
+    /* Bentuk bulat */
+    display: flex;
+    /* Flexbox agar teks di tengah */
+    align-items: center;
+    /* Vertikal tengah */
+    justify-content: center;
+    /* Horizontal tengah */
+    font-size: 18px;
+    /* Ukuran simbol panah */
+    cursor: pointer;
+    /* Kursor tangan */
+    backdrop-filter: blur(4px);
+    /* Efek kaca */
+    transition: all 0.25s ease;
+    /* Transisi halus */
+}
+
+.slider-btn:hover {
+    background-color: rgba(169, 30, 44, 0.85);
+    /* Merah wine soft saat di-hover */
+    transform: translateY(-50%) scale(1.08);
+    /* Sedikit membesar halus */
+    border-color: #e56868;
+    /* Border merah soft */
+}
+
+.prev-btn {
+    left: 20px;
+    /* Posisi di kiri */
+}
+
+.next-btn {
+    right: 20px;
+    /* Posisi di kanan */
+}
+
+/* Indikator Titik (Dots) Slider */
+.slider-dots {
+    position: absolute;
+    /* Posisi absolut di bawah slider */
+    bottom: 20px;
+    /* Jarak dari bawah */
+    left: 50%;
+    /* Posisi tengah horizontal */
+    transform: translateX(-50%);
+    /* Koreksi tengah */
+    z-index: 10;
+    /* Di atas slide */
+    display: flex;
+    /* Tampil sejajar */
+    gap: 10px;
+    /* Jarak antar titik */
+}
+
+.slider-dot {
+    width: 12px;
+    /* Ukuran titik */
+    height: 12px;
+    /* Tinggi titik */
+    border-radius: 50%;
+    /* Bentuk lingkaran */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Warna putih transparan */
+    cursor: pointer;
+    /* Kursor tangan */
+    transition: all 0.3s ease;
+    /* Animasi halus */
+}
+
+.slider-dot:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Lebih terang saat hover */
+}
+
+.slider-dot.active {
+    width: 32px;
+    /* Memanjang menjadi kapsul */
+    border-radius: 6px;
+    /* Sudut membulat */
+    background-color: #a91e2c;
+    /* Warna merah soft aktif */
+    box-shadow: 0 0 8px rgba(169, 30, 44, 0.5);
+    /* Efek glow lembut */
+}
+
+.terbaru-all,
+.all-berita {
+    padding: 10px;
+    /* Ruang dalam untuk kontainer berita */
+}
+
+/*================================== Renponsive =================================*/
+@media (max-width:768px) {
+    /* Aturan ini hanya aktif jika lebar layar <= 768px */
+
+    .image-slider {
+        width: 100%;
+        /* Lebar penuh */
+        height: 400px;
+        /* Tinggi slider dikurangi agar pas di layar kecil */
+        margin-top: 3px;
+        /* Jarak atas sedikit saja di layar kecil */
+    }
+
+    .slider-text p {
+        font-size: 14px;
+        /* Ukuran paragraf teks diperkecil */
+    }
+
+    .slider-text {
+        padding: 6px;
+        /* Padding teks dikurangi untuk layar kecil */
+        border-radius: 10px;
+        /* Membulatkan sudut dengan ukuran tetap */
+    }
+}
+
+/* =========== BERTITA-NEW-WRAPPER =============== */
+h2 {
+    color: #a91e2c;
+    /* Warna teks judul merah soft */
+    margin: 24px 20px 12px 20px;
+    /* Jarak atas 24px, kiri-kanan 20px, bawah 12px agar lega */
+    font-family: "Roboto Condensed", sans-serif;
+    /* Gunakan font Roboto Condensed */
+}
+
+.berita-new-wrapper {
+    display: flex;
+    /* Atur semua kartu berita secara horizontal */
+    gap: 15px;
+    /* Jarak antar kartu berita */
+    overflow-x: auto;
+    /* Aktifkan scroll horizontal jika konten melebihi lebar */
+    padding: 10px 0;
+    /* Padding atas dan bawah 10px */
+    scroll-snap-type: x mandatory;
+    /* Aktifkan snapping horizontal: elemen akan 'menempel' saat discroll */
+}
+
+/* Hilangkan scrollbar default pada Chrome, Safari */
+.berita-new-wrapper::-webkit-scrollbar {
+    height: 10px;
+    /* Tinggi scrollbar horizontal */
+    display: none;
+    /* Sembunyikan scrollbar */
+}
+
+.berita-new-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Warna bagian scroll yang bisa digeser */
+    border-radius: 10px;
+    /* Membulatkan sudut */
+}
+
+.berita-new-wrapper::-webkit-scrollbar-track {
+    background-color: #eee;
+    /* Warna latar belakang dari scrollbar */
+}
+
+.berita-card {
+    flex: 0 0 auto;
+    /* Elemen tidak boleh mengecil atau membesar */
+    scroll-snap-align: start;
+    /* Saat discroll, elemen akan 'menempel' di awal kontainer */
+    width: 270px;
+    /* Lebar tetap untuk tiap kartu berita */
+    border: 1px solid #d8dce2;
+    /* Garis abu tipis lembut di sekitar kartu */
+    background: white;
+    /* Latar belakang putih */
+    border-radius: 12px;
+    /* Sudut membulat */
+    overflow: hidden;
+    /* Potong isi yang keluar dari kotak */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    /* Bayangan lembut */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    /* Efek transisi saat di-hover */
+    display: flex;
+    /* Flexbox untuk konten dalam kartu */
+    flex-direction: column;
+    /* Susunan vertikal */
+    justify-content: space-between;
+    /* Bagian atas dan bawah seimbang */
+}
+
+.berita-card:hover {
+    transform: translateY(-4px);
+    /* Naik halus saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    /* Bayangan lembut saat hover */
+}
+
+.berita-card img {
+    width: 100%;
+    /* Gambar mengisi seluruh lebar kartu */
+    height: 160px;
+    /* Tinggi seragam */
+    aspect-ratio: 16/9;
+    /* Rasio standar video/berita */
+    object-fit: cover;
+    /* Gambar dipotong proporsional */
+    border-radius: 0;
+    /* Sudut gambar rata mengikuti kartu */
+    transition: transform 0.3s ease;
+    /* Transisi zoom */
+}
+
+.berita-card:hover img {
+    transform: scale(1.05);
+    /* Perbesar halus saat kartu di-hover */
+}
+
+/* Badge Kategori Berita */
+.badge-kategori {
+    display: inline-block;
+    /* Tampil sebagai blok inline */
+    width: fit-content;
+    /* Lebar pas sesuai teks */
+    font-size: 11px;
+    /* Ukuran teks kecil */
+    font-weight: 700;
+    /* Tebal */
+    text-transform: uppercase;
+    /* Huruf besar */
+    color: #a91e2c;
+    /* Teks merah soft */
+    background-color: rgba(169, 30, 44, 0.09);
+    /* Latar merah soft transparan */
+    padding: 3px 8px;
+    /* Ruang dalam kapsul */
+    border-radius: 4px;
+    /* Sudut membulat */
+    margin: 12px 12px 4px 12px;
+    /* Jarak luar */
+    letter-spacing: 0.5px;
+    /* Spasi huruf */
+}
+
+/* Tanggal Publikasi Berita */
+.tanggal-berita {
+    display: block;
+    /* Tampil di baris sendiri */
+    font-size: 11px;
+    /* Ukuran teks tanggal */
+    color: #888888;
+    /* Warna abu-abu halus */
+    padding: 0 12px 6px 12px;
+    /* Padding kiri-kanan */
+    font-weight: 400;
+    /* Berat font normal */
+}
+
+.berita-card h3 {
+    color: #272a30;
+    /* Warna teks judul charcoal lembut terbaca */
+    font-size: 0.95rem;
+    /* Ukuran teks proporsional */
+    line-height: 1.4;
+    /* Jarak baris nyaman */
+    padding: 0 12px 10px 12px;
+    /* Ruang dalam sekeliling teks */
+    font-family: "Roboto Condensed", sans-serif;
+    /* Gunakan font Roboto Condensed */
+    display: -webkit-box;
+    /* Trik multi-line clamp */
+    -webkit-line-clamp: 2;
+    /* Batasi maksimal 2 baris agar rapi (WebKit) */
+    line-clamp: 2;
+    /* Standar properti CSS W3C */
+    -webkit-box-orient: vertical;
+    /* Orientasi baris vertikal */
+    overflow: hidden;
+    /* Sembunyikan jika lebih dari 2 baris */
+    flex: 1;
+    /* Mengisi ruang judul */
+}
+
+.berita-card a {
+    text-decoration: none;
+    /* Hilangkan garis bawah link */
+    font-weight: 600;
+    /* Tebal sedang */
+    color: #a91e2c;
+    /* Merah wine soft khas Faktanesia */
+    padding: 8px 12px 14px 12px;
+    /* Ruang dalam */
+    font-size: 13px;
+    /* Ukuran kecil */
+    font-family: "Open Sans", sans-serif;
+    /* Gunakan font Open Sans */
+    transition: color 0.2s ease;
+    /* Transisi warna */
+}
+
+.berita-card a:hover {
+    color: #8e1824;
+    /* Merah soft lebih gelap */
+    text-decoration: underline;
+    /* Garis bawah saat hover */
+}
+
+/*==================== responsive ====================*/
+@media (max-width:768px) {
+    .berita-card {
+        width: 220px;
+        /* Lebar kartu dikecilkan agar muat di layar kecil */
+    }
+
+    .berita-card h3 {
+        font-size: 13px;
+        /* Ukuran judul lebih kecil */
+        padding: 0 10px 8px 10px;
+        /* Padding dikurangi */
+    }
+
+    .berita-card a {
+        font-size: 12px;
+        /* Ukuran link juga lebih kecil */
+        padding: 6px 10px 10px 10px;
+        /* Padding juga dikurangi */
+    }
+}
+
+/* ======================== semua-berita ========================== */
+.semua-berita {
+    display: flex;
+    /* Atur kontainer agar anak-anaknya sejajar secara horizontal */
+    flex-wrap: wrap;
+    /* Jika tidak cukup ruang, item akan turun ke baris berikutnya */
+    gap: 24px;
+    /* Jarak antar elemen berita */
+    justify-content: center;
+    /* Semua elemen dipusatkan di tengah */
+    padding: 20px;
+    /* Ruang di sekitar konten */
+}
+
+.semua-berita::-webkit-scrollbar {
+    height: 8px;
+    /* Tinggi scrollbar horizontal jika tampil */
+}
+
+.semua-berita::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    /* Warna bagian thumb dari scrollbar */
+    border-radius: 10px;
+    /* Membulatkan sudut scrollbar */
+}
+
+.semua-berita::-webkit-scrollbar-track {
+    background-color: #eee;
+    /* Warna latar belakang scrollbar */
+}
+
+.berita-all-card {
+    width: 290px;
+    /* Lebar kartu berita */
+    background-color: white;
+    /* Warna latar belakang putih */
+    border-radius: 12px;
+    /* Sudut kartu membulat */
+    overflow: hidden;
+    /* Potong konten yang keluar dari kartu */
+    border: 1px solid #d8dce2;
+    /* Garis batas halus modern */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    /* Bayangan lembut */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    /* Transisi animasi saat hover */
+    display: flex;
+    /* Flexbox internal */
+    flex-direction: column;
+    /* Susun vertikal */
+    justify-content: space-between;
+    /* Distribusi atas-bawah rata */
+}
+
+.berita-all-card:hover {
+    transform: translateY(-4px);
+    /* Saat hover, kartu naik sedikit */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    /* Tambah bayangan saat hover */
+}
+
+.berita-all-card a {
+    display: block;
+    /* Tautan jadi blok penuh */
+    padding: 8px 12px 14px 12px;
+    /* Ruang dalam di sekitar teks link */
+    color: #a91e2c;
+    /* Warna merah soft khas Faktanesia */
+    text-decoration: none;
+    /* Hilangkan garis bawah */
+    font-weight: 600;
+    /* Tebal sedang */
+    font-family: "Open Sans", sans-serif;
+    /* Gunakan font Open Sans */
+    font-size: 13px;
+    /* Ukuran font */
+    transition: color 0.2s ease;
+    /* Transisi saat warna berubah (hover) */
+}
+
+.berita-all-card a:hover {
+    color: #8e1824;
+    /* Ubah warna saat hover jadi merah lebih gelap */
+    text-decoration: underline;
+    /* Tambahkan garis bawah saat hover */
+}
+
+.berita-all-card img {
+    width: 100%;
+    /* Gambar isi seluruh lebar kartu */
+    height: 160px;
+    /* Tinggi tetap 160px */
+    aspect-ratio: 16/9;
+    /* Rasio aspek proporsional */
+    object-fit: cover;
+    /* Potong gambar agar mengisi penuh dan tetap proporsional */
+    border-radius: 0;
+    /* Sudut rata dengan card */
+    transition: transform 0.3s ease;
+    /* Transisi zoom */
+}
+
+.berita-all-card:hover img {
+    transform: scale(1.05);
+    /* Perbesar halus saat di-hover */
+}
+
+.berita-all-card h3 {
+    font-size: 1rem;
+    /* Ukuran teks sedang */
+    line-height: 1.4;
+    /* Spasi baris lega */
+    padding: 0 12px 10px 12px;
+    /* Ruang dalam */
+    color: #272a30;
+    /* Warna teks judul charcoal lembut */
+    font-family: "Roboto Condensed", sans-serif;
+    /* Font Roboto Condensed */
+    display: -webkit-box;
+    /* Trik multi-line clamp */
+    -webkit-line-clamp: 2;
+    /* Maksimal 2 baris (WebKit) */
+    line-clamp: 2;
+    /* Standar properti CSS W3C */
+    -webkit-box-orient: vertical;
+    /* Orientasi vertikal */
+    overflow: hidden;
+    /* Sembunyikan overflow */
+    flex: 1;
+    /* Mengisi ruang */
+}
+
+/*===================== responsive =====================*/
+@media (max-width: 600px) {
+    .berita-all-card {
+        width: 100%;
+        /* Untuk layar kecil (HP), kartu memenuhi lebar penuh */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .berita-all-card {
+        width: 48%;
+        /* Untuk tablet, tampil 2 kolom (sekitar 48%) */
+    }
+}
+
+@media (min-width: 1025px) {
+    .berita-all-card {
+        width: 30%;
+        /* Untuk desktop besar, tampil 3 kolom (30% per kartu) */
+    }
+
+    .semua-berita {
+        max-width: 1200px;
+        /* Maksimal lebar kontainer semua berita */
+        margin: 0 auto;
+        /* Pusatkan kontainer di tengah halaman */
+    }
+}
+
+
+/* =========================================== SARAN DAN KRITIK ================================================ */
+.judul-form {
+    text-align: center;
+    /* Judul form dibuat rata tengah harmonis */
+    margin: 30px auto 10px;
+    /* Jarak atas 30px, bawah 10px, rata tengah */
+    color: #a91e2c;
+    /* Warna merah soft */
+    font-family: "Roboto Condensed", sans-serif;
+    /* Font Roboto Condensed */
+}
+
+form.form-saran {
+    max-width: 800px;
+    /* Lebar maksimum form adalah 800px */
+    margin: 20px auto 40px auto;
+    /* Jarak atas 20px, bawah 40px, dan rata tengah secara horizontal */
+    padding: 24px;
+    /* Ruang di dalam form */
+    background-color: white;
+    /* Warna latar belakang putih */
+    border-radius: 12px;
+    /* Sudut form dibuat membulat */
+    border: 1px solid #d8dce2;
+    /* Garis batas halus modern */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    /* Bayangan halus di sekitar form */
+    font-family: 'Segoe UI', sans-serif;
+    /* Menggunakan font Segoe UI */
+}
+
+form.form-saran .field-saran {
+    border: none;
+    /* Tidak ada garis batas untuk elemen ini */
+    margin: 0;
+    /* Tidak ada margin */
+    padding: 0;
+    /* Tidak ada padding */
+}
+
+form.form-saran label {
+    font-weight: 600;
+    /* Teks label agak tebal */
+    display: block;
+    /* Label ditampilkan di baris sendiri */
+    margin-bottom: 6px;
+    /* Jarak bawah 6px agar tidak terlalu mepet */
+    color: #3f444e;
+    /* Warna abu-abu charcoal lembut */
+}
+
+form.form-saran label.label-inline {
+    display: inline;
+    /* Label inline untuk radio button */
+    font-weight: normal;
+    /* Ketebalan normal */
+    margin-right: 15px;
+    /* Jarak antar opsi */
+    cursor: pointer;
+    /* Kursor tangan */
+}
+
+form.form-saran input[type="text"],
+form.form-saran input[type="email"],
+form.form-saran select,
+form.form-saran textarea {
+    width: 100%;
+    /* Lebar input 100% dari kontainer */
+    padding: 10px 12px;
+    /* Ruang dalam di semua sisi */
+    font-size: 0.95rem;
+    /* Ukuran font standar */
+    border: 1px solid #d8dce2;
+    /* Batas abu-abu halus */
+    background-color: #fafbfc;
+    /* Latar input lembut */
+    color: #2e3238;
+    /* Warna teks input */
+    border-radius: 8px;
+    /* Sudut membulat modern */
+    margin-bottom: 16px;
+    /* Jarak antar input */
+    box-sizing: border-box;
+    /* Padding termasuk ke dalam ukuran total */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    /* Transisi fokus */
+}
+
+form.form-saran input[type="text"]:focus,
+form.form-saran input[type="email"]:focus,
+form.form-saran select:focus,
+form.form-saran textarea:focus {
+    outline: none;
+    /* Hilangkan outline default */
+    border-color: #a91e2c;
+    /* Batas merah soft saat aktif */
+    background-color: #ffffff;
+    /* Latar putih saat aktif */
+    box-shadow: 0 0 0 3px rgba(169, 30, 44, 0.1);
+    /* Ring fokus lembut */
+}
+
+form.form-saran textarea {
+    min-height: 100px;
+    /* Tinggi minimal textarea */
+    resize: vertical;
+    /* Hanya bisa diubah tingginya, bukan lebarnya */
+}
+
+form.form-saran input[type="radio"] {
+    margin-right: 5px;
+    /* Jarak antara radio button dan teks */
+}
+
+form.form-saran button[type="submit"] {
+    background-color: #a91e2c;
+    /* Warna tombol merah soft Faktanesia */
+    color: white;
+    /* Teks warna putih */
+    font-weight: bold;
+    /* Teks ditebalkan */
+    padding: 12px 24px;
+    /* Ukuran tombol (atas-bawah 12px, kiri-kanan 24px) */
+    border: none;
+    /* Tanpa garis tepi */
+    border-radius: 8px;
+    /* Sudut tombol membulat modern */
+    cursor: pointer;
+    /* Ubah kursor jadi tangan saat diarahkan */
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    /* Animasi saat warna berubah */
+}
+
+form.form-saran button[type="submit"]:hover {
+    background-color: #8e1824;
+    /* Warna tombol lebih gelap saat hover */
+}
+
+.notif-sukses {
+    background-color: #e8f5e9;
+    /* Warna latar hijau pastel lembut untuk notifikasi sukses */
+    color: #2e6930;
+    /* Warna teks hijau daun tenang */
+    border: 1px solid #c8e6c9;
+    /* Garis batas hijau lembut */
+    padding: 16px 20px;
+    /* Ruang dalam notifikasi */
+    border-radius: 8px;
+    /* Sudut membulat */
+    max-width: 800px;
+    /* Lebar maksimal sesuai form */
+    margin: 20px auto;
+    /* Rata tengah */
+    font-size: 0.95rem;
+    /* Ukuran teks notifikasi */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    /* Bayangan lembut */
+}
+
+/* ================== RESPONSIVE UNTUK FORM ================= */
+@media (max-width: 768px) {
+    body {
+        margin-top: 60px;
+        /* Tambah jarak dari atas agar konten tidak tertutup navbar */
+    }
+
+    form.form-saran {
+        margin: 20px 15px;
+        /* Jarak atas-bawah 20px, kiri-kanan 15px */
+        padding: 15px;
+        /* Ruang dalam dikurangi agar muat di layar kecil */
+    }
+
+    form.form-saran input[type="text"],
+    form.form-saran input[type="email"],
+    form.form-saran select,
+    form.form-saran textarea {
+        font-size: 0.95rem;
+        /* Sedikit mengecilkan ukuran teks agar pas di layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    form.form-saran button[type="submit"] {
+        width: 100%;
+        /* Tombol isi seluruh lebar form di layar HP */
+    }
+}
+
+
+/* ================================== SEARCH ==================================== */
+/* =================== MODAL PENCARIAN BERITA =================== */
+.modal {
+    display: none;
+    /* Modal disembunyikan secara default */
+    position: fixed;
+    /* Posisi tetap di layar walaupun di-scroll */
+    z-index: 100;
+    /* Menentukan urutan lapisan (modal di atas elemen lain) */
+    left: 0;
+    /* Mulai dari sisi kiri layar */
+    top: 0;
+    /* Mulai dari sisi atas layar */
+    width: 100%;
+    /* Lebar modal mencakup seluruh layar */
+    height: 100%;
+    /* Tinggi modal mencakup seluruh layar */
+    overflow-y: auto;
+    /* Jika isi terlalu banyak, bisa di-scroll secara vertikal */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Latar belakang transparan hitam (50%) */
+}
+
+.modal-content {
+    background-color: white;
+    /* Latar belakang konten modal putih */
+    margin: 80px auto;
+    /* Jarak atas 80px, dan rata tengah */
+    padding: 28px;
+    /* Ruang di dalam konten */
+    border-radius: 16px;
+    /* Sudut membulat modern */
+    border: 1px solid #e3e6eb;
+    /* Garis tepi halus */
+    width: 90%;
+    /* Lebarnya 90% dari layar */
+    max-width: 800px;
+    /* Lebar maksimum 800px */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    /* Bayangan lembut */
+    animation: fadeIn 0.3s ease-in-out;
+    /* Efek animasi saat muncul */
+    position: relative;
+    /* Untuk memposisikan tombol close secara absolut di dalamnya */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* Awalnya transparan */
+        transform: translateY(-10px);
+        /* Awalnya sedikit naik */
+    }
+
+    to {
+        opacity: 1;
+        /* Muncul sepenuhnya */
+        transform: translateY(0);
+        /* Kembali ke posisi normal */
+    }
+}
+
+.close-button {
+    position: absolute;
+    /* Letak absolut dalam modal-content */
+    top: 14px;
+    /* Jarak dari atas */
+    right: 20px;
+    /* Jarak dari kanan */
+    font-size: 26px;
+    /* Ukuran teks tombol tutup */
+    font-weight: bold;
+    /* Teks lebih tebal */
+    color: #a91e2c;
+    /* Warna merah soft */
+    cursor: pointer;
+    /* Kursor berubah jadi tangan saat hover */
+    transition: color 0.3s;
+    /* Efek perubahan warna saat hover */
+}
+
+.close-button:hover {
+    color: #8e1824;
+    /* Warna jadi lebih gelap saat hover */
+}
+
+/* =================== HEADER HASIL =================== */
+#result-count {
+    font-size: 1.1rem;
+    /* Ukuran teks hasil */
+    font-weight: 700;
+    /* Huruf tebal */
+    margin-bottom: 20px;
+    /* Jarak ke bawah */
+    color: #272a30;
+    /* Warna teks charcoal lembut */
+    font-family: "Roboto Condensed", sans-serif;
+    /* Font judul */
+}
+
+/* =================== HASIL ITEM =================== */
+.search-item {
+    background-color: #f7f9fb;
+    /* Latar belakang abu terang lembut */
+    border: 1px solid #d8dce2;
+    /* Garis tepi halus */
+    padding: 16px 20px;
+    /* Ruang di dalam kotak hasil */
+    margin-bottom: 14px;
+    /* Jarak antar item */
+    border-left: 4px solid #a91e2c;
+    /* Garis merah soft di kiri sebagai penanda */
+    border-radius: 8px;
+    /* Sudut membulat */
+    transition: all 0.2s ease-in-out;
+    /* Animasi lembut saat hover */
+}
+
+.search-item:hover {
+    transform: translateY(-2px);
+    /* Saat dihover, sedikit naik */
+    background-color: #ffffff;
+    /* Latar putih saat hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    /* Bayangan saat hover */
+}
+
+.search-item h4 {
+    font-size: 1.05rem;
+    /* Ukuran judul hasil */
+    color: #272a30;
+    /* Warna teks charcoal */
+    margin-bottom: 8px;
+    /* Jarak ke bawah */
+    line-height: 1.4;
+    /* Jarak baris */
+    font-family: "Roboto Condensed", sans-serif;
+    /* Gunakan font Roboto Condensed */
+}
+
+.search-item a {
+    color: #a91e2c;
+    /* Warna tautan merah soft */
+    text-decoration: none;
+    /* Hilangkan garis bawah */
+    font-weight: 600;
+    /* Teks agak tebal */
+    font-size: 13px;
+    /* Ukuran teks */
+    transition: color 0.2s;
+    /* Efek perubahan warna saat hover */
+    font-family: "Open Sans", sans-serif;
+    /* Gunakan font Open Sans */
+}
+
+.search-item a:hover {
+    text-decoration: underline;
+    /* Garis bawah saat hover */
+    color: #8e1824;
+    /* Warna merah soft lebih gelap saat hover */
+}
+
+.search-item hr {
+    margin-top: 14px;
+    /* Jarak atas garis */
+    border: none;
+    /* Hilangkan garis default */
+    border-top: 1px solid #e0e4ea;
+    /* Garis pemisah halus */
+}
+
+/* =============== RESPONSIVE ======================== */
+@media (max-width: 600px) {
+    .modal-content {
+        margin: 50px auto;
+        /* Kurangi jarak atas untuk layar kecil */
+        padding: 20px;
+        /* Kurangi padding */
+    }
+
+    .search-item h4 {
+        font-size: 1rem;
+        /* Perkecil ukuran teks judul hasil */
+    }
+
+    #result-count {
+        font-size: 1rem;
+        /* Perkecil teks jumlah hasil */
+    }
+}
+
+/* ==================== LOADING STATE ==================== */
+.loading-state {
+    text-align: center;
+    /* Teks di tengah */
+    padding: 30px;
+    /* Ruang dalam */
+    color: #888888;
+    /* Warna abu-abu lembut */
+    font-size: 15px;
+    /* Ukuran teks */
+    font-family: "Open Sans", sans-serif;
+    /* Jenis font */
+    font-weight: 500;
+    /* Ketebalan sedang */
+    width: 100%;
+    /* Lebar penuh */
+    display: flex;
+    /* Flexbox */
+    justify-content: center;
+    /* Rata tengah horizontal */
+    align-items: center;
+    /* Rata tengah vertikal */
+    animation: pulseLoading 1.5s infinite ease-in-out;
+    /* Animasi berkedip halus */
+}
+
+@keyframes pulseLoading {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}

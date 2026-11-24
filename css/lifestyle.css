@@ -1,0 +1,70 @@
+.lifestyle-all{ /*Wadah utama tempat semua kartu berita lifestyle ditampilin.*/
+    display: flex;/*Biar isinya bisa berjajar secara fleksibel.*/
+    flex-wrap: wrap;/* Kalau gak cukup satu baris, otomatis pindah ke baris bawah.*/
+    gap: 20px;/*Kasih jarak antar item (kartu-kartu) sebesar 20px.*/
+    justify-content: center;/*Semua item ditaruh di tengah secara horizontal.*/
+    padding: 20px;/*Tambah ruang di dalam kontainernya (biar gak dempet ke tepi).*/
+}
+.lifestyle-all::-webkit-scrollbar{/*Ini styling buat scrollbar khusus di browser berbasis Webkit (kayak Chrome).*/
+    height: 8px;/*Kalau kontennya overflow horizontal, scrollbar-nya tingginya 8px.*/
+}
+.isi-lifestyle{/*satu kotak/kartu berita lifestyle*/
+    width: 285px;/*Lebar kartunya 285px.*/
+    background-color: white;/*Latar belakang kartunya putih.*/
+    border-radius: 12px;/*Ujung-ujung kartunya dibikin membulat.*/
+    overflow: hidden;/*Biar isi di dalam gak keluar dari kotaknya.*/
+    border: 1px solid #d8dce2;/*Garis tepi halus.*/
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);/*Kasih bayangan halus di bawah kotak biar keliatan ngambang.*/
+    transition: transform 0.25s ease, box-shadow 0.25s ease;/*Efek animasi halus saat kotak digerakkan.*/
+    display: flex;/*Flexbox*/
+    flex-direction: column;/*Vertikal*/
+    justify-content: space-between;/*Atas bawah seimbang*/
+}
+.isi-lifestyle:hover{/*Kalau kita arahkan kursor ke kartu (hover)*/
+    transform: translateY(-4px);/*Kartunya naik sedikit ke atas*/
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);/*Bayangannya juga makin lembut*/
+}
+.isi-lifestyle a{/*Styling untuk link/tombol di dalam kartu*/
+    display: inline-block;/*Link inline blok*/
+    padding: 6px 12px 14px 12px;/*Kasih ruang biar teks gak dempet.*/
+    color: #a91e2c;/*Warna merah soft Faktanesia*/
+    text-decoration: none;/*Gak ada garis bawah.*/
+    font-weight: 600;/*Tulisannya sedikit ditebalkan*/
+    font-size: 13px;/*Ukuran font*/
+    font-family: "Open Sans", sans-serif;/*Pakai font Open Sans*/
+    transition: color 0.2s ease;/*Warna berubah halus pas di-hover*/
+}
+.isi-lifestyle a:hover{/*Kalau link-nya dihover*/
+    color: #8e1824;/*Warnanya jadi merah soft lebih gelap.*/
+    text-decoration: underline;/*Dikasih garis bawah.*/
+}
+.isi-lifestyle img {/* Gambar di dalam kartu berita*/
+    width: 100%;/*Lebar gambar sesuai lebar kotak.*/
+    height: 160px;/*Tinggi gambar tetap.*/
+    aspect-ratio: 16/9;/*Rasio 16:9*/
+    object-fit: cover;/*Biar gambar tetap proporsional dan penuh*/
+    border-radius: 0;/*Sudut rata*/
+    transition: transform 0.3s ease;/*Animasi zoom*/
+}
+.isi-lifestyle:hover img{ /*Kalau kursor hover image*/
+    transform: scale(1.05); /*Perbesar halus*/
+}
+.isi-lifestyle h3{/*Judul berita di dalam kartu*/
+    font-size: 1rem;/*Ukuran huruf normal (1rem)*/
+    line-height: 1.4;/*Jarak baris*/
+    padding: 0 12px 10px 12px;/*Kasih ruang dalam biar gak nempel ke pinggir.*/
+    color: #272a30;/*Warna teks charcoal lembut.*/
+    font-family: "Roboto Condensed", sans-serif;/*Pakai font Roboto Condensed.*/
+    display: -webkit-box;/*Line-clamp*/
+    -webkit-line-clamp: 2;/*Maksimal 2 baris*/
+    line-clamp: 2;/*Standar properti CSS W3C*/
+    -webkit-box-orient: vertical;/*Vertikal*/
+    overflow: hidden;/*Sembunyikan*/
+    flex: 1;/*Isi ruang*/
+}
+.isi-lifestyle small{/*Teks kecil (biasanya tanggal atau info tambahan)*/
+    padding: 10px 12px 4px 12px;/*Ada padding biar agak longgar.*/
+    color: #767d86;/*Warna abu-abu lembut*/
+    font-size: 11px;/*Font kecil*/
+    font-weight: 400;/*Tulisannya normal*/
+}

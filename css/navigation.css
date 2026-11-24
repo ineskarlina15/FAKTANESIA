@@ -1,0 +1,176 @@
+/* Mengimpor font Oswald dari Google Fonts agar bisa digunakan dalam styling teks di halaman.*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* ========================== NAVIGASI ======================*/
+*{
+    box-sizing: border-box;/*Menetapkan agar padding dan border tidak menambah ukuran elemen. Ini membantu layout jadi lebih konsisten.*/
+}
+
+nav{
+    position: fixed;/*Navigasi menempel di atas layar meskipun di-scroll*/
+    top: 0;/*Menempel ke sisi atas halaman*/
+    left: 0;/*Menempel ke sisi kiri halaman */
+    width: 100%;/*Lebar 100% dari layar*/
+    background-color: #1a1c20;/*Latar belakang graphite gelap soft, tidak hitam pekat*/
+    display: flex;/*Menggunakan flexbox untuk menata isinya*/
+    justify-content: space-between;/*Elemen tersebar antara kiri-kanan*/
+    align-items: center;/*Vertikal rata tengah */
+    padding: 0 20px;/*Spasi kanan-kiri 20px*/
+    height: 60px;/*Tinggi navigasi 60px */
+    z-index: 100;/*Ditaruh di atas elemen lain */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);/*Bayangan bawah halus*/
+    flex-wrap: wrap;/*Kalau sempit, isi akan membungkus */
+}
+
+.logo img{
+    max-height: 60px;/*Tinggi maksimal gambar logo*/
+    height: auto;/*Tingginya menyesuaikan isi gambarnya*/
+    width: auto;/*Lebarnya juga ngikutin gambar aslinya*/
+}
+
+nav ul{
+    display: flex;/*Menu dibuat sejajar horizontal*/
+    align-items: center;/*Rata tengah ke atas-bawah*/
+    gap: 1.5rem;/*Jarak antar menu*/
+    list-style: none;/*Hilangin titik-titik (bullet) pada list*/
+    margin: 0;/*Nggak ada margin*/
+    padding: 0;/*Nggak ada padding*/
+}
+
+
+nav ul li a{
+    text-decoration: none;/* Hilangin garis bawah dari link*/
+    font-family: 'Oswald', 'Roboto Condensed', sans-serif;/*Pakai font tegas khas berita*/
+    color: #ffffff;/*Warnanya putih*/
+    font-weight: 500;/*Tebal tulisannya sedang*/
+    letter-spacing: 0.5px;/*Sedikit jarak antar huruf agar rapi*/
+    padding: 6px 4px;/*Atas bawah 6px, kanan kiri 4px*/
+    transition: all 0.3s ease;/*Efek animasi halus pas hover*/
+    border-bottom: 2px solid transparent;/*Ada garis bawah (tapi awalnya transparan)*/
+}
+
+nav ul li a:hover{
+    color: #e56868;/*Kalau diarahkan mouse (hover), warnanya merah soft*/
+    border-bottom: 2px solid #e56868;/*Kasih garis bawah merah saat hover*/
+}
+
+nav ul li a.active-nav{
+    color: #e56868;/*Warna merah soft untuk menandakan halaman aktif*/
+    border-bottom: 2px solid #e56868;/*Garis bawah tegas untuk halaman aktif*/
+    font-weight: 700;/*Teks lebih tebal untuk halaman yang sedang dibuka*/
+}
+
+.search-container{
+    display: flex;/*Input dan tombol sejajar*/
+    align-items: center;/*Tengah-tengah vertikal*/
+    gap: 6px;/*Jarak antar elemen 6px*/
+}
+
+.search-container input{
+    padding: 6px 12px;/*Isi kotaknya lebih proporsional*/
+    border-radius: 20px;/*Ujung melengkung kapsul modern*/
+    border: 1px solid #383c46;/*Garis pinggir abu halus*/
+    background-color: #24272e;/*Latar gelap soft agar menyatu*/
+    color: #ffffff;/*Teks putih saat mengetik*/
+    font-family: 'Open Sans', sans-serif;/*Font nyaman untuk input*/
+    font-size: 13px;/*Ukuran teks pas*/
+    max-width: 220px;/*Lebarnya maksimal 220px*/
+    transition: all 0.3s ease;/*Transisi halus*/
+}
+.search-container input:focus{
+    outline: none;/*Hilangkan outline bawaan*/
+    border-color: #e56868;/*Warna merah soft saat fokus*/
+    background-color: #2c3038;/*Sedikit lebih terang saat fokus*/
+    box-shadow: 0 0 0 3px rgba(229, 104, 104, 0.2);/*Efek glow halus*/
+}
+.search-container button {
+    padding: 6px 14px;/* Ukuran tombolnya nyaman*/
+    background-color: #a91e2c;/*Warna tombol merah soft Faktanesia*/
+    color: white;/*Teksnya putih*/
+    border: none;/*Nggak ada garis pinggir*/
+    cursor: pointer;/*Kursor jadi tangan pas diarahin*/
+    border-radius: 20px;/* Pojok tombol membulat kapsul*/
+    font-family: 'Open Sans', sans-serif;/*Font sans-serif*/
+    font-weight: 600;/*Teks semi tebal*/
+    font-size: 13px;/*Ukuran teks tombol*/
+    transition: background-color 0.2s ease, transform 0.1s ease;/*Transisi*/
+}
+.search-container button:hover{
+    background-color: #8e1824;/*Warna lebih gelap saat hover*/
+    transform: scale(1.03);/*Efek timbul sedikit*/
+}
+.menu-icon{
+    display: none;/* Sembunyiin tombol menu dulu (nanti muncul di HP)*/
+    font-size: 28px;/*Ukurannya agak besar*/
+    color: #ffffff;/*Warna putih*/
+    cursor: pointer;/*Jadi tangan pas hover*/
+    margin-left: auto;/*Didorong ke kanan*/
+}
+
+/* ======================= RESPONSIVE ====================== */
+@media (max-width: 768px) {/* Semua isi di dalam sini cuma aktif kalau layar lebih kecil dari 768px (biasanya HP dan tablet)*/
+    nav {
+        flex-direction: column;/*Navbar jadi disusun ke bawah*/
+        align-items: flex-start;/* Semua isi di dalam nav akan nempel ke kiri*/
+        padding: 10px 20px;/* Tambah jarak bagian dalam: atas-bawah 10px, kiri-kanan 20px.*/
+        height: auto;/* Tinggi navbar disesuaikan otomatis dengan isi di dalamnya.*/
+        flex-wrap: wrap;/* Kalau item-nya kepanjangan, mereka boleh pindah ke baris bawah.*/
+    }
+
+    .logo{
+        width: 100%;/*Logo dibikin penuh selebar layar.*/
+        text-align: center;/*posisinya di tengah.*/
+        margin-bottom: 10px;/*Kasih jarak bawah dari logo ke elemen lainnya.*/
+    }
+
+    .logo img {
+        max-height: 90px;/*tinggi gambar logonya boleh sampai 90px (lebih tinggi dari desktop).*/
+        height: auto;/*Tingginya tetap fleksibel, sesuai isi gambar.*/
+    }
+
+    .menu-icon {
+        display: block;/*Tampilkan tombol hamburger (yang biasanya disembunyi di versi desktop)*/
+        position: absolute;/*Posisi tombol ini bebas, bisa ditempatkan di mana saja (di luar alur layout normal).*/
+        top: 15px;/* Dari atas, dikasih jarak 15px.*/
+        right: 20px;/* Dari kanan, jaraknya 20px (biar pas di pojok kanan atas).*/
+        font-size: 28px;/*Ukuran tombol hamburgernya dibuat besar supaya gampang dilihat & diklik.*/
+        cursor: pointer;/*Saat disentuh/diarahkan mouse, kursor berubah jadi tangan.*/
+        color: white;/*Warna icon-nya putih biar kontras dengan background hitam.*/
+    }
+
+    nav ul {
+        flex-direction: column;/*Menu disusun ke bawah (vertikal).*/
+        align-items: center;/*Semua menu diatur supaya rata tengah.*/
+        width: 100%;/*Menu ul dibikin selebar layar.*/
+        display: none;/*Awalnya disembunyiin dulu (nanti dimunculin pakai JavaScript).*/
+        background-color: #1a1c20;/*Warna latar belakangnya hitam soft biar nyatu sama navbar.*/
+        margin-top: 10px;/*Jarak atas antara navbar dan menu dikasih 10px.*/
+        padding: 10px 0;/*Tambah padding atas dan bawah 10px, kiri-kanan 0px.*/
+        gap: 10px;/* Jarak antar menu diatur biar tidak terlalu dempet.*/
+    }
+
+    nav ul.show {
+        display: flex;/* Kalau elemen ul dikasih class show, maka dia akan dimunculkan sebagai flex.*/
+    }
+
+    .search-container {
+        width: 100%;/*penuh selebar layar.*/
+        justify-content: center;/* Posisinya diatur tengah-tengah.*/
+        margin-top: 10px;/*Jarak atas dari elemen sebelumnya 10px.*/
+    }
+
+    .search-container input {
+        max-width: 80%;/*Kotak input maksimal lebarnya 80% dari layar.*/
+        padding: 4px 8px;/* Isi kotaknya lebih rapat: atas-bawah 4px, kiri-kanan 8px.*/
+    }
+
+    .search-container button{
+        padding: 4px 8px;/*Tombol search juga dibikin lebih kecil padding-nya supaya pas di HP.*/
+    }
+}
+
+@media (max-width: 480px) {/* khusus untuk layar yang super kecil, kayak HP lama atau yang resolusinya kecil.*/
+    nav ul li a {
+        font-size: 14px;/*Ukuran tulisan di menu dibuat lebih kecil, supaya muat dan nggak tumpuk-tumpukan.*/
+    }
+}

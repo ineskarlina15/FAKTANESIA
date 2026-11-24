@@ -1,0 +1,101 @@
+.market-all{/*wadah utama semua kartu berita market*/
+    display: flex;/*Supaya item-item di dalamnya berjajar fleksibel.*/
+    flex-wrap: wrap;/*Kalau penuh, item bakal turun ke baris baru.*/
+    gap: 20px;/* Kasih jarak antar item 20px.*/
+    justify-content: center;/*Semuanya disejajarkan di tengah*/
+    padding: 20px;/*Kasih ruang di dalamnya supaya gak nempel pinggir*/
+}
+.market-all::-webkit-scrollbar{/*khusus browser berbasis WebKit (Chrome, Safari).*/
+    height: 8px;/*Ngatur tinggi scroll bar horizontal (kalau muncul) jadi 8px */
+}
+.market-all::-webkit-scrollbar-thumb{/*Ngatur bagian "yang bisa digeser" dari scroll bar (thumb)*/
+    background-color: #aaa;/*Warnanya abu-abu terang.*/
+    border-radius: 10px;/*Ujungnya dibuat bulat biar lebih estetik.*/
+}
+.market-all::-webkit-scrollbar-track{/* Bagian "jalur" scroll bar (track) */
+    background-color: #eee;/*warna abu-abu muda.*/
+}
+.isi-market{/*satu kartu berita:*/
+    width: 285px;/*Lebarnya 285px.*/
+    background-color: white;/*Latar belakang putih.*/
+    border-radius: 12px;/*Ujung-ujungnya dibikin bundar modern.*/
+    overflow: hidden;/* Isi yang lebih besar dari kotaknya disembunyikan*/
+    border: 1px solid #d8dce2;/*Garis batas halus.*/
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);/* Tambah bayangan halus */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;/*Animasi halus pas ada perubahan posisi.*/
+    display: flex;/*Flexbox internal*/
+    flex-direction: column;/*Susun vertikal*/
+    justify-content: space-between;/*Atas-bawah seimbang*/
+}
+.isi-market:hover{/*Kalau kursor diarahkan ke kartu*/
+    transform: translateY(-4px);/*Kartunya naik dikit ke atas.*/
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);/*Bayangannya makin lembut*/
+}
+.isi-market a{/*Gaya untuk link di dalam kartu*/
+    display: inline-block;/*Link blok inline*/
+    padding: 6px 12px 14px 12px;/*Ada ruang sekitar (padding).*/
+    color: #a91e2c;/*Warna merah soft khas Faktanesia*/
+    text-decoration: none;/*Tanpa garis bawah.*/
+    font-weight: 600;/*Font agak tebal*/
+    font-size: 13px;/*Ukuran font*/
+    font-family: "Open Sans", sans-serif;/*Font Open Sans*/
+    transition: color 0.2s ease;/*Warna berubah halus saat di-hover.*/
+}
+.isi-market a:hover{/* Saat link dihover:*/
+    color: #8e1824;/*Warnanya jadi merah soft lebih gelap.*/
+    text-decoration: underline;/*Tambah garis bawah*/
+}
+.isi-market img {/*Gambar dalam kartu*/
+    width: 100%;/*Lebar full*/
+    height: 160px;/*Tinggi 160px.*/
+    aspect-ratio: 16/9;/*Rasio 16:9*/
+    object-fit: cover;/*Gambar tetap proporsional*/
+    border-radius: 0;/*Sudut rata*/
+    transition: transform 0.3s ease;/*Animasi zoom*/
+}
+.isi-market:hover img{/*Kalau kursor diarahkan ke image*/
+    transform: scale(1.05); /*Perbesar halus saat dihover*/
+}
+.isi-market h3{/*Judul berita*/
+    font-size: 1rem;/*Ukuran sedang (1rem).*/
+    line-height: 1.4;/*Jarak baris*/
+    padding: 0 12px 10px 12px;/*Dikasih jarak di sekeliling.*/
+    color: #272a30;/*Warna teks charcoal lembut*/
+    font-family: "Roboto Condensed", sans-serif;/*Font Roboto Condensed*/
+    display: -webkit-box;/*Line-clamp*/
+    -webkit-line-clamp: 2;/*Maksimal 2 baris*/
+    line-clamp: 2;/*Standar properti CSS W3C*/
+    -webkit-box-orient: vertical;/*Vertikal*/
+    overflow: hidden;/*Sembunyikan*/
+    flex: 1;/*Isi ruang*/
+}
+.isi-market small{/*Teks kecil (biasanya buat tanggal atau info tambahan)*/
+    padding: 10px 12px 4px 12px;/*Dikasih ruang.*/
+    color: #767d86;/*Warna abu-abu lembut*/
+    font-size: 11px;/*Font kecil*/
+    font-weight: 400;/*Tulisan normal*/
+}
+
+/* ==================== responsive ====================*/
+@media (max-width: 768px){/*Kalau layar lebarnya 768px atau lebih kecil (HP/tablet).*/
+    .market-all{/*Susunan kartu di .market-all*/
+        flex-direction: column;/*Jadi satu kolom (atas-bawah).*/
+        align-items: center;/*Semua kartu ditaruh di tengah.*/
+        padding: 10px;/*Padding dikurangi jadi 10px.*/
+    }
+    .isi-market{
+        width: 90%;/*Ukuran kartu diperbesar jadi hampir penuh (90% dari lebar layar HP).*/
+    }
+    .isi-market img{
+        height: 180px;/*Gambar dalam kartu ditinggikan jadi 180px (biar lebih jelas di HP).*/
+    }
+    .isi-market h3{
+        font-size: 1.1rem;/* Judul berita dibesarkan sedikit biar tetap terbaca di layar kecil*/
+    }
+    .isi-market a{
+        font-size: 0.95rem;/*Ukuran link juga sedikit dikecilin, tapi tetap terbaca nyaman.*/
+    }
+    .isi-market small{
+        font-size: 0.8rem;/* Ukuran teks kecil (tanggal) juga dikecilin biar proporsional.*/
+    }
+}

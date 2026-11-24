@@ -1,0 +1,213 @@
+#syariah-container{
+    display: flex; /* Mengatur elemen di dalam kontainer ini agar sejajar fleksibel */
+    flex-direction: column; /* Menyusun elemen anak secara vertikal */
+    align-items: flex-start; /* Elemen rata kiri rapi */
+    background-color: #fff; /* Memberi latar belakang putih */
+    border-radius: 16px; /* Membulatkan sudut-sudut kotak */
+    border: 1px solid #d8dce2; /* Garis tepi halus */
+    padding: 24px; /* Memberikan jarak ke dalam */
+    margin: 20px auto; /* Memberi jarak luar dan center kiri-kanan */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04); /* Memberi bayangan halus */
+    max-width: 900px; /* Maksimum lebar kontainer adalah 900px */
+}
+
+#syariah-container img{
+    width: 100%; /* Lebar penuh kontainer */
+    max-height: 420px; /* Maksimal tinggi proporsional */
+    aspect-ratio: 16/9; /* Rasio aspek standar */
+    object-fit: cover; /* Gambar rapi tidak gepeng */
+    border-radius: 12px; /* Sudut gambar dibulatkan */
+    transition: transform 0.3s ease; /* Transisi */
+}
+
+#syariah-container img:hover{
+    transform: scale(1.02); /* Sedikit membesar saat hover */
+}
+
+#syariah-container h3{
+    margin-top: 16px; /* Jarak atas */
+    font-size: 1.4rem; /* Ukuran huruf judul utama */
+    color: #272a30; /* Warna teks charcoal lembut */
+    font-family: "Roboto Condensed", sans-serif; /* Font tegas */
+    line-height: 1.35; /* Spasi baris */
+}
+
+#syariah-container p{
+    margin-top: 8px; /* Jarak atas */
+    font-size: 15px; /* Ukuran teks paragraf */
+    color: #4a5058; /* Warna abu gelap lembut */
+    line-height: 1.6; /* Jarak baris lega untuk membaca */
+    font-family: "Open Sans", sans-serif; /* Font Open Sans */
+}
+
+#syariah-container a{
+    display: inline-block; /* Tombol inline-block */
+    margin-top: 14px; /* Jarak atas */
+    color: white; /* Teks putih */
+    background-color: #a91e2c; /* Latar merah soft Faktanesia */
+    padding: 8px 18px; /* Ruang dalam tombol */
+    border-radius: 6px; /* Sudut tombol membulat */
+    font-weight: 600; /* Ketebalan sedang */
+    font-size: 13px; /* Ukuran font */
+    text-decoration: none; /* Hilangkan garis bawah */
+    font-family: "Open Sans", sans-serif; /* Font */
+    transition: background-color 0.25s ease; /* Transisi */
+}
+
+#syariah-container a:hover{
+    background-color: #8e1824; /* Warna lebih gelap saat hover */
+}
+
+
+/* syariah semua */
+.syariah-all{
+    display: flex; /* Gunakan layout fleksibel */
+    flex-wrap: wrap; /* Jika penuh, item akan turun ke baris baru */
+    gap: 20px; /* Jarak antar elemen 20px */
+    justify-content: center; /* Semua elemen disejajarkan ke tengah */
+    padding: 20px; /* Jarak bagian dalam 20px */
+}
+.syariah-all::-webkit-scrollbar{
+    height: 8px;/* Jika ada scroll horizontal, tingginya 8px */
+}
+.isi-syariah{
+    width: 285px; /* Lebar tetap 285px */
+    background-color: white; /* Latar belakang putih */
+    border-radius: 12px; /* Sudut membulat */
+    overflow: hidden; /* Konten yang meluber dipotong */
+    border: 1px solid #d8dce2; /* Garis tepi */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04); /* Bayangan ringan */
+    transition: transform 0.25s ease, box-shadow 0.25s ease; /* Efek animasi ketika berubah posisi */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Vertikal */
+    justify-content: space-between; /* Distribusi rata */
+}
+.isi-syariah:hover{
+    transform: translateY(-4px); /* Saat di-hover, naik sedikit ke atas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Bayangan lebih besar */
+}
+.isi-syariah a{
+    display: inline-block; /* Buat link jadi inline blok */
+    padding: 6px 12px 14px 12px; /* Jarak dalam */
+    color: #a91e2c; /* Warna teks merah soft */
+    text-decoration: none; /* Tidak ada garis bawah */
+    font-weight: 600; /* Ketebalan sedang */
+    font-size: 13px; /* Ukuran font */
+    font-family: "Open Sans", sans-serif; /* Gunakan font Open Sans */
+    transition: color 0.2s ease; /* Efek transisi warna */
+}
+.isi-syariah a:hover{
+    color: #8e1824; /* Warna berubah jadi merah lebih gelap saat hover */
+    text-decoration: underline; /* Tambah garis bawah saat hover */
+}
+.isi-syariah img {
+    width: 100%; /* Gambar mengisi lebar kontainer */
+    height: 160px; /* Tinggi tetap 160px */
+    aspect-ratio: 16/9; /* Rasio 16:9 */
+    object-fit: cover; /* Gambar di-crop biar tetap rapi */
+    border-radius: 0; /* Sudut rata */
+    transition: transform 0.3s ease; /* Transisi */
+}
+.isi-syariah:hover img{
+    transform: scale(1.05); /* Zoom halus */
+}
+
+.isi-syariah h3{
+    font-size: 1rem; /* Ukuran teks h3 sebesar 1rem */
+    line-height: 1.4; /* Jarak baris */
+    padding: 0 12px 10px 12px; /* Jarak isi ke tepi */
+    color: #272a30; /* Warna teks charcoal lembut */
+    font-family: "Roboto Condensed", sans-serif; /* Gunakan font Roboto Condensed */
+    display: -webkit-box; /* Multi line clamp */
+    -webkit-line-clamp: 2; /* Maksimal 2 baris */
+    line-clamp: 2; /* Standar properti CSS W3C */
+    -webkit-box-orient: vertical; /* Vertikal */
+    overflow: hidden; /* Sembunyikan */
+    flex: 1; /* Isi ruang */
+}
+.isi-syariah small{
+    padding: 10px 12px 4px 12px; /* Jarak dalam */
+    color: #767d86; /* Warna abu-abu lembut */
+    font-size: 11px; /* Ukuran kecil */
+    font-weight: 400; /* Teks normal */
+}
+
+/* ========================= Responsive ======================= */
+@media (max-width: 1024px){ /*Untuk laptop kecil atau tablet landscape*/
+    #syariah-container{
+        max-width: 720px;/* Batasi lebar container supaya tidak terlalu besar */
+    }
+    #syariah-container img{
+         height: auto; /* Tinggi gambar menyesuaikan isi */
+    max-height: 400px; /* Tapi dibatasi supaya tidak terlalu tinggi */
+    }
+}
+@media (max-width: 768px){/*Untuk tablet atau HP dalam posisi horizontal*/
+    /* Untuk berita utama: syariah-container */
+    #syariah-container{
+        padding: 10px; /* Kurangi jarak dalam */
+        margin: 10px; /* Kurangi jarak luar */
+        max-width: 90%; /* Lebar maksimal hanya 90% dari lebar layar */
+    }
+    #syariah-container img{
+        height: auto; /* Gambar fleksibel mengikuti rasio aslinya */
+        max-height: 300px; /* Maksimal tinggi 300px */
+    }
+    #syariah-container p{
+        font-size: 0.95rem;/* Ukuran font sedikit lebih kecil */
+    }
+    #syariah-container a{
+        font-size: 0.95rem; /* Ukuran tautan lebih kecil juga */
+    display: inline-block; /* Biar bisa diberi gaya seperti tombol */
+    text-align: center; /* Teks dalam tautan diratakan tengah */
+    }
+    /* Untuk semua berita: syariah-all */
+    .syariah-all{
+        flex-direction: column; /* Diubah jadi tumpukan vertikal */
+    align-items: center; /* Semua item ditengahkan */
+    padding: 10px; /* Jarak dalam dikurangi */
+    }
+    .isi-syariah{
+        width: 90%;/* Lebarnya jadi hampir penuh di layar kecil */
+    }
+    .isi-syariah img{
+        height: auto;
+        max-height: 180px; /* Gambar tidak terlalu tinggi */
+    }
+    .isi-syariah h3{
+        font-size: 1.05rem;/* Ukuran judul sedikit dibesarkan */
+    }
+    .isi-syariah small,
+    .isi-syariah a{
+        font-size: 0.9rem;/* Ukuran info tambahan & link dibuat lebih kecil */
+    }
+}
+/* Untuk hp besar */
+@media (max-width: 600px){
+    #syariah-container{
+        max-width: 95%; /* Hampir penuh, tapi masih ada jarak samping */
+        padding: 12px; /* Sedikit ruang dalam */
+    }
+    #syariah-container img{
+        height: auto;
+        max-height: 250px; /* Gambar tidak melebihi 250px tinggi */    }
+}
+/* Untuk hp layar sempit */
+@media (max-width: 480px){
+    #syariah-container{
+        max-width: 100%; /* Kontainer penuh sampai pinggir layar */
+        padding: 10px; /* Padding tetap agar tidak terlalu rapat */
+    }
+    #syariah-container img{
+        height: auto;
+        max-height: 160px; /* Gambar dibatasi agar tetap ringan dan muat */    }
+    #syariah-container h3{
+        font-size: 1rem;/* Judul dibuat sedikit lebih kecil */
+    }
+    #syariah-container p{
+        font-size: 0.9rem;/* Paragraf lebih kecil agar pas di layar */
+    }
+    #syariah-container a{
+        font-size: 0.9rem;/* Ukuran link disesuaikan */
+    }
+}
